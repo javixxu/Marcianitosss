@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livesEnemy: 2
+  points: 100
 --- !u!61 &2105635236584548127
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -199,6 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livesEnemy: 2
+  points: 100
 --- !u!61 &2531458015492895946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -433,6 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livesEnemy: 2
+  points: 100
 --- !u!61 &3233975915916008898
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -469,7 +472,6 @@ GameObject:
   m_Component:
   - component: {fileID: 11010327456970757}
   - component: {fileID: 3073187117450882014}
-  - component: {fileID: 88988566414978530}
   m_Layer: 0
   m_Name: p_Squad_01
   m_TagString: Untagged
@@ -508,20 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869c936da3fcc584db34e3ce28f11681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amplitude: 1.5
---- !u!114 &88988566414978530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6007772786681407514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26693afb142f804883151000ac80ce0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alturaMAX: -3.2
+  _amplitude: 2.5
 --- !u!1 &7264866486590747152
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livesEnemy: 2
+  points: 100
 --- !u!61 &7264866486590747154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -721,6 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livesEnemy: 2
+  points: 100
 --- !u!61 &8543513322868359134
 BoxCollider2D:
   m_ObjectHideFlags: 0

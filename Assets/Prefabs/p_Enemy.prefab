@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1519828870404087247}
   - component: {fileID: 1519828870404087241}
+  - component: {fileID: 5089898183411473811}
   - component: {fileID: 1519828870404087246}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: p_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +47,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livesEnemy: 2
+  points: 100
+--- !u!114 &5089898183411473811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519828870404087244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26693afb142f804883151000ac80ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alturaMAX: -2.5
 --- !u!61 &1519828870404087246
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -82,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1519828870854696599}
   - component: {fileID: 1519828870854696598}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Alien 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

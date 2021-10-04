@@ -5,7 +5,7 @@ using UnityEngine;
 public class SquadMovementComponent : MonoBehaviour
 {
     private int _initialDirection;
-    private float _verticalSpeed=0.001f;
+    private float _verticalSpeed=0.002f;
     private float _horizontalSpeed=1.5f;
     private float _frequency=1.5f;
     public float _amplitude=1.5f;//diametro del movimiento
@@ -29,4 +29,5 @@ public class SquadMovementComponent : MonoBehaviour
         transform.position = new Vector3(x,y-_verticalSpeed,0);
     }
     public float Altura() { return y; }
+    public void Destruir() { Destroy(this.gameObject); }
 }

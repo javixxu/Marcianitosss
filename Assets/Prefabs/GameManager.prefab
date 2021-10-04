@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872aec32ec492c64bb62f5277ec78667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _squads:
+  - {fileID: 6007772786681407514, guid: c371e22a64e05fb459ab48cb3021e2c6, type: 3}
+  - {fileID: 7319942833557274271, guid: f742dd0397f96b44eaa350751dca6955, type: 3}
+  tiempoRespawn: 15

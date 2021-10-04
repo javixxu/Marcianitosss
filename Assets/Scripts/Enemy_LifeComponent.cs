@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Enemy_LifeComponent : MonoBehaviour
 {
-   public int livesEnemy=2;
+    public int livesEnemy=2;
     public int points = 100;
     GameManager gameManager;
+    WorldVerticalDeadlineComponent _deadlineComponent;
     private void Start()
     {
         gameManager = GameManager.Instance();
+       
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
