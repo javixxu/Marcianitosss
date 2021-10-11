@@ -18,7 +18,10 @@ public class WorldVerticalDeadlineComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        if (alturaDESTRUCT.Altura() <= alturaMAX) { Destroy(this.gameObject);gameManager.OnEnemyReachesBottomline();alturaDESTRUCT.Destruir(); }
+        if (alturaDESTRUCT.Altura() <= alturaMAX) 
+        { Destroy(this.gameObject);
+         gameManager.OnEnemyReachesBottomline();
+         alturaDESTRUCT.Destruir(); }
     }
     
 }

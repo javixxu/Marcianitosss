@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
      GameObject player;
     //PUNTOS DEL JUGADOR
-    int Score=0;
+    int _score=0;
     //GENERACION DE ENEMIGOSS
     public float tiempoRespawn=15;
     private float _timer;
@@ -57,11 +57,12 @@ public class GameManager : MonoBehaviour
             int aleatorio= Random.Range(0, _squads.Length );
             Instantiate<GameObject>(_squads[aleatorio],transform.position,Quaternion.identity);
             _timer = tiempoRespawn;
-        }              
+        }
+        if (_score >= 1500) _uiManager.Victoria();
     }
     public void OnEnemyDies(int scoreToAdd) {
-       Score += scoreToAdd;
-       Debug.Log(Score);
+       _score += scoreToAdd;
+       Debug.Log(_score);
     }
     public void OnEnemyReachesBottomline()
     {       
@@ -78,7 +79,7 @@ public class GameManager : MonoBehaviour
     private void MGameOver()
     {
         _isGameRunning = false;
-        _uiManager.GameOver(Score);
+        _uiManager.GameOver(_score);
     }
     
 }

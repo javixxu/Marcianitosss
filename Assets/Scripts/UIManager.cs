@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-   public GameObject gameOver,Score;
+   public GameObject gameOver,Score,victoria;
    public Text scoreText;
-    
+   public string nombreScena="GAME1";
     private void Start()
     {
         Score.SetActive(false);
@@ -22,6 +22,13 @@ public class UIManager : MonoBehaviour
     }
     public void ChageScene()
     {
-       SceneManager.LoadScene("GAME1");
+       SceneManager.LoadScene(nombreScena);
+    }
+    public void Victoria()
+    {
+        victoria.SetActive(true);
+        // Invoke("ChageScene",5);
+        Time.timeScale = 0;
+       
     }
 }
