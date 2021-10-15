@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
             //Asegurar que solo exista una instancia del Game Manager
             _instance = this;
             //Evita que el gameManager se destruya al cambiar de escena
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
         else
         {
@@ -81,5 +81,11 @@ public class GameManager : MonoBehaviour
         _isGameRunning = false;
         _uiManager.GameOver(_score);
     }
-    
+    //void OnLevelWasLoaded(int level)
+    //{
+    //    if (level == 13)
+    //        print("Woohoo");
+
+    //}
+
 }

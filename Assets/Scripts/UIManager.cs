@@ -27,8 +27,9 @@ public class UIManager : MonoBehaviour
     public void Victoria()
     {
         victoria.SetActive(true);
-        // Invoke("ChageScene",5);
-        Time.timeScale = 0;
+        Score.SetActive(true);
+        Invoke("ChageScene",5);
+       
        
     }
 }
