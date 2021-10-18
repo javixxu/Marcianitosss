@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private bool _isGameRunning;
+    private bool _isGameRunning=true;private int _level = 0;
     UIManager _uiManager;
-
+    [SerializeField]
+    int _winPoints;
     [SerializeField]
      GameObject[] _squads;
     [SerializeField]
@@ -35,10 +36,11 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        //variable en la que se inicia el juego
+        //variable en la que se inicia el juego, 
         _isGameRunning = true;
+              
         //PODER CONECTAR LA UI CON EL GAMEMANAGER
-         _uiManager = GetComponent<UIManager>();
+        _uiManager = GetComponent<UIManager>();
         //TIEMPO DE RESPAWN
         _timer = tiempoRespawn;
     }
@@ -52,13 +54,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {        
         _timer -= Time.deltaTime;
-
+        
         if (_isGameRunning&&(int)_timer < 0) {
             int aleatorio= Random.Range(0, _squads.Length );
             Instantiate<GameObject>(_squads[aleatorio],transform.position,Quaternion.identity);
             _timer = tiempoRespawn;
         }
-        if (_score >= 1500) _uiManager.Victoria();
+        if (_score >= _winPoints) Victoria();
+       
     }
     public void OnEnemyDies(int scoreToAdd) {
        _score += scoreToAdd;
@@ -74,18 +77,26 @@ public class GameManager : MonoBehaviour
     {
         player.SetActive(false);
         MGameOver();
-        Debug.Log("EL JUGADOR A MUERTO");
+        Debug.Log("EL JUGADOR HA MUERTO");
     }
     private void MGameOver()
     {
         _isGameRunning = false;
+       
         _uiManager.GameOver(_score);
     }
-    //void OnLevelWasLoaded(int level)
+    void Victoria()
+    {
+        _isGameRunning = false;
+       
+        _uiManager.Victoria(_score);
+    }
+    //public void EmpiezaJuego() { _isGameRunning =!_isGameRunning;  }
+   // void OnLevelWasLoaded(int level)
     //{
-    //    if (level == 13)
-    //        print("Woohoo");
+    //    if (level == 1)
+    //        _isGameRunning = true;
 
     //}
-
+    
 }

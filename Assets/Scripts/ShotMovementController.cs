@@ -13,10 +13,9 @@ public class ShotMovementController : MonoBehaviour
         rb.velocity = new Vector2(0, shotSpeed) * shotSpeed;
     }
     //NO VIENE EN LA PRACTICA PA QUE QUEDE MEJOR
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(this.gameObject);
-
     }
 }
 

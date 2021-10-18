@@ -5,7 +5,7 @@ using UnityEngine;
 public class SquadMovementComponent : MonoBehaviour
 {
     private int _initialDirection;
-    private float _verticalSpeed=0.002f;
+    private float _verticalSpeed=0.004f;
     private float _horizontalSpeed=1.5f;
     private float _frequency=1.5f;
     //pregunbtar si lo puedo dejar publico

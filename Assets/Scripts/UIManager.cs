@@ -6,30 +6,39 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    GameManager _myGameManager;
    public GameObject gameOver,Score,victoria;
    public Text scoreText;
    public string nombreScena="GAME1";
     private void Start()
     {
-        Score.SetActive(false);
-        gameOver.SetActive(false);
+        _myGameManager = GameManager.Instance();
+        
     }
     public void GameOver(int points)
     {
         gameOver.SetActive(true);
-        scoreText.text = points.ToString();
-        Score.SetActive(true);
+        showScore(points);
+        Invoke("ChageScene", 5);
+     
     }
     public void ChageScene()
     {
-       SceneManager.LoadScene(nombreScena);
+        //_myGameManager.EmpiezaJuego();    
+        SceneManager.LoadScene(nombreScena);
+       
     }
-    public void Victoria()
+    public void Victoria(int points)
     {
         victoria.SetActive(true);
-        Score.SetActive(true);
+        showScore(points);
         Invoke("ChageScene",5);
-       
-       
+        
     }
+    void showScore(int points)
+    {
+        scoreText.text = points.ToString();
+        Score.SetActive(true);
+    }
+    
 }

@@ -13,7 +13,7 @@ public class Enemy_LifeComponent : MonoBehaviour
         gameManager = GameManager.Instance();
        
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)  
     {
         //NO VIENE EN LA PRACTICA , PERO ES PARA Q SOLO LOS ENEMIGOS PIUEDAN DESTRUIRSE CON BALAS
         if (collision.gameObject.GetComponent<ShotMovementController>())
