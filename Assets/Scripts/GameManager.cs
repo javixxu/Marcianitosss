@@ -4,21 +4,65 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private bool _isGameRunning=true;private int _level = 0;
+    #region referencies
     UIManager _uiManager;
     [SerializeField]
-    int _winPoints;
+    GameObject player;
     [SerializeField]
-     GameObject[] _squads;
-    [SerializeField]
-     GameObject player;
-    //PUNTOS DEL JUGADOR
-    int _score=0;
-    //GENERACION DE ENEMIGOSS
-    public float tiempoRespawn=15;
-    private float _timer;
+    GameObject[] _squads;
+    
 
+    #endregion
+    #region properties
+    [SerializeField]
+    int _winPoints;
+    private bool _isGameRunning;
+    //PUNTOS DEL JUGADOR
+    int _score = 0;
+    private float _timer;
+    #endregion
+    #region parameters
+    //GENERACION DE ENEMIGOSS
+    public float tiempoRespawn = 15;
+    #endregion
+    #region methods
     static private GameManager _instance;
+    //Instanciar el gamemanager en otras instancias
+    static public GameManager Instance()
+    {
+        return _instance;
+    }
+    public void OnEnemyDies(int scoreToAdd)
+    {
+        _score += scoreToAdd;
+        Debug.Log(_score);
+    }
+    public void OnEnemyReachesBottomline()
+    {
+        player.SetActive(false);
+        MGameOver();
+        Debug.Log("LOS ENEMIGOS HAN LLEGADO A LA DEATHZONE");
+    }
+    public void OnPlayerDies()
+    {
+        player.SetActive(false);
+        MGameOver();
+        Debug.Log("EL JUGADOR HA MUERTO");
+    }
+    private void MGameOver()
+    {
+        _isGameRunning = false;
+
+        _uiManager.GameOver(_score);
+    }
+    void Victoria()
+    {
+        _isGameRunning = false;
+
+        _uiManager.Victoria(_score);
+    }
+    #endregion
+
     void Awake()
     {               
         if (_instance == null)
@@ -43,13 +87,7 @@ public class GameManager : MonoBehaviour
         _uiManager = GetComponent<UIManager>();
         //TIEMPO DE RESPAWN
         _timer = tiempoRespawn;
-    }
-    //Instanciar el gamemanager en otras instancias
-    static public GameManager Instance()
-    {
-        return _instance;
-    }
-    
+    }   
     // Update is called once per frame
     void Update()
     {        
@@ -63,34 +101,7 @@ public class GameManager : MonoBehaviour
         if (_score >= _winPoints) Victoria();
        
     }
-    public void OnEnemyDies(int scoreToAdd) {
-       _score += scoreToAdd;
-       Debug.Log(_score);
-    }
-    public void OnEnemyReachesBottomline()
-    {       
-        player.SetActive(false);
-        MGameOver();
-        Debug.Log("LOS ENEMIGOS HAN LLEGADO A LA DEATHZONE");
-    }
-    public void OnPlayerDies()
-    {
-        player.SetActive(false);
-        MGameOver();
-        Debug.Log("EL JUGADOR HA MUERTO");
-    }
-    private void MGameOver()
-    {
-        _isGameRunning = false;
-       
-        _uiManager.GameOver(_score);
-    }
-    void Victoria()
-    {
-        _isGameRunning = false;
-       
-        _uiManager.Victoria(_score);
-    }
+   
     //public void EmpiezaJuego() { _isGameRunning =!_isGameRunning;  }
    // void OnLevelWasLoaded(int level)
     //{

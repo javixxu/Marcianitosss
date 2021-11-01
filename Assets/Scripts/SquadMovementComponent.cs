@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class SquadMovementComponent : MonoBehaviour
 {
+    #region References//para intentar acceder a un script o GameObject
+    #endregion
+    #region Properties//variables que solo necesita el programador(privadas y tal)
+    #endregion
+    #region Parameters//variables publicas que le interesaria cambiar al diseñador
+
+    #endregion
+    #region Methods//metodos
+    #endregion
     private int _initialDirection;
     private float _verticalSpeed=0.004f;
     private float _horizontalSpeed=1.5f;

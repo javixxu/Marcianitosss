@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class Enemy_LifeComponent : MonoBehaviour
 {
-    public int livesEnemy=2;
-    public int points = 100;
-    GameManager gameManager;
+    #region References
+    GameManager _myGameManager;
     WorldVerticalDeadlineComponent _deadlineComponent;
+    #endregion
+    #region Properties
+    #endregion
+    #region Parameters
+    public int livesEnemy = 2;
+    public int points = 100;
+    #endregion
+    #region Methods
+    public void Damageable()
+    {
+        Destroy(this.gameObject);
+        _myGameManager.OnEnemyDies(points);
+    }
+    #endregion  
     private void Start()
     {
-        gameManager = GameManager.Instance();
-       
+        _myGameManager = GameManager.Instance();       
     }
     private void OnTriggerEnter2D(Collider2D collision)  
     {
@@ -21,14 +33,8 @@ public class Enemy_LifeComponent : MonoBehaviour
             livesEnemy--;
             if (livesEnemy <= 0)
             {
-                Damageable();
-                
+                Damageable();                
             }
         }
-    }
-    public void Damageable()
-    {
-        Destroy(this.gameObject);
-        gameManager.OnEnemyDies(points);
     }
 }

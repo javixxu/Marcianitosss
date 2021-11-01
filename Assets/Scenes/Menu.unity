@@ -1107,9 +1107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6e72a5d10fd65439ada599ff051949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
-  Score: {fileID: 0}
-  victoria: {fileID: 0}
+  gameOver: {fileID: 52291985}
+  Score: {fileID: 52291985}
+  victoria: {fileID: 52291985}
   scoreText: {fileID: 0}
   nombreScena: GAME1
 --- !u!1 &2031570569
