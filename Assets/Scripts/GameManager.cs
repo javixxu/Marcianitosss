@@ -9,9 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject player;
     [SerializeField]
-    GameObject[] _squads;
-    
-
+    GameObject[] _squads;  
     #endregion
     #region properties
     [SerializeField]
